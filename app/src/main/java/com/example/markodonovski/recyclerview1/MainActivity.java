@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         students.add(new Student("student 1", true));
         students.add(new Student("student 2", true));
         students.add(new Student("student 3", true));
+        students.add(new Student("student 4", true));
 
         return students;
     }
