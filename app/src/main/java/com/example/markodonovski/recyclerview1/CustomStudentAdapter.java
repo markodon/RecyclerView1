@@ -1,6 +1,7 @@
 package com.example.markodonovski.recyclerview1;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,6 +40,14 @@ public class CustomStudentAdapter extends RecyclerView.Adapter<CustomStudentAdap
         Student student = studentList.get(position);
 
         holder.textView.setText(student.getsName());
+        if (student.issOnline()){
+            holder.textView2.setText("Is Online");
+            holder.textView2.setTextColor(Color.GREEN);
+        }
+        else {
+            holder.textView2.setText("Is Offline");
+            holder.textView2.setTextColor(Color.RED);
+        }
 
     }
 
@@ -51,6 +60,8 @@ public class CustomStudentAdapter extends RecyclerView.Adapter<CustomStudentAdap
 
         @BindView(R.id.text)
         TextView textView;
+        @BindView(R.id.text2)
+        TextView textView2;
 
         public ViewHolder(View itemView) {
             super(itemView);
