@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import java.util.ArrayList;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -22,6 +24,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         CustomStudentAdapter adapter = new CustomStudentAdapter();
+
+        adapter.setItems(generateList());
+
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
@@ -29,9 +34,17 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void generateList() {
+    ArrayList<Student> generateList(){
+        ArrayList<Student> students = new ArrayList<>();
 
+        students.add(new Student("student 1", true));
+        students.add(new Student("student 2", true));
+        students.add(new Student("student 3", true));
+
+        return students;
     }
+
+
 
 
 }
