@@ -66,4 +66,5 @@ public class ImageData implements Serializable{
     public ImageData(String webformatURL) {
         this.webformatURL = webformatURL;
     }
+
 }
