@@ -1,10 +1,12 @@
 package com.example.markodonovski.recyclerview1;
 
+import java.io.Serializable;
+
 /**
  * Created by markodonovski on 12/14/17.
  */
 
-public class ImageData {
+public class ImageData implements Serializable{
 
     String likes;
     String favorites;
