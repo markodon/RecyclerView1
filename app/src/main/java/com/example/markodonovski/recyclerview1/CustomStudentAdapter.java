@@ -6,7 +6,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,10 +23,17 @@ import butterknife.ButterKnife;
 
 public class CustomStudentAdapter extends RecyclerView.Adapter<CustomStudentAdapter.ViewHolder>{
 
+
+    Context context;
     List<Student> studentList =  new ArrayList<>();
 
     public void setItems(List<Student> students){
         studentList = students;
+    }
+
+    public CustomStudentAdapter(Context context1) {
+        context = context1;
+
     }
 
     @Override
@@ -43,11 +53,18 @@ public class CustomStudentAdapter extends RecyclerView.Adapter<CustomStudentAdap
         if (student.issOnline()){
             holder.textView2.setText("Is Online");
             holder.textView2.setTextColor(Color.GREEN);
+            Picasso.with(context).load("http://pngimg.com/uploads/lighter/lighter_PNG11188.png").centerInside().fit().into(holder.slika1);
+
         }
         else {
             holder.textView2.setText("Is Offline");
             holder.textView2.setTextColor(Color.RED);
+            Picasso.with(context).load("http://imagenpng.com/wp-content/uploads/2015/03/cigarette-150153_640.png").centerInside().fit().into(holder.slika1);
+
         }
+
+
+
 
     }
 
@@ -62,6 +79,8 @@ public class CustomStudentAdapter extends RecyclerView.Adapter<CustomStudentAdap
         TextView textView;
         @BindView(R.id.text2)
         TextView textView2;
+        @BindView(R.id.slika)
+        ImageView slika1;
 
         public ViewHolder(View itemView) {
             super(itemView);

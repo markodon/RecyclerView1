@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        CustomStudentAdapter adapter = new CustomStudentAdapter();
+        CustomStudentAdapter adapter = new CustomStudentAdapter(this);
 
         adapter.setItems(generateList());
 
