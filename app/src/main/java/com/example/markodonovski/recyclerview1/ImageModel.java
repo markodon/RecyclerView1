@@ -9,5 +9,5 @@ import java.util.ArrayList;
 
 public class ImageModel implements Serializable {
 
-    public ArrayList<ImageData> hints;
+    public ArrayList<ImageData> hits;
 }
